@@ -9,10 +9,16 @@ public abstract class Conta implements IConta {
     protected int agencia;
     protected int numeroConta;
     protected double saldo;
+    protected Cliente cliente;
 
-    public Conta() {
+    public Conta(Cliente cliente) {
         this.agencia = Conta.AGENCIA;
         this.numeroConta = Conta.SEQUENCIAL++;
+        this.cliente = cliente;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
 
     public int getAgencia() {
@@ -45,5 +51,10 @@ public abstract class Conta implements IConta {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "cliente=" + cliente +
+                '}';
+    }
 }

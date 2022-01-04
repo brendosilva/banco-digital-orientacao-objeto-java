@@ -2,8 +2,11 @@ package br.dio;
 
 public class Main {
     public static void main(String[] args) {
-        Conta cc = new ContaCorrente();
-        Conta cp = new ContaPoupanca();
+        Cliente brendo = new Cliente();
+        brendo.setNome("Brendo");
+
+        Conta cc = new ContaCorrente(brendo);
+        Conta cp = new ContaPoupanca(brendo);
 
         cc.depositar(1000);
         cc.sacar(50);
